@@ -36,7 +36,7 @@ const parse = inputFile => {
 
 const generateFilePath = inputFile => {
   const basename = path.basename(inputFile, '.csv');
-  return inputFile.replace(basename, basename + '-FreeAgent');
+  return inputFile.replace(basename, 'FreeAgent-' + basename);
 };
 
 module.exports = {
