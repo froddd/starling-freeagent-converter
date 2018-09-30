@@ -1,10 +1,16 @@
+#!/usr/bin/env node
 const parser = require('./src/parser');
+const program = require('commander');
 
-const inputFile = process.argv[2];
+program
+  .arguments('<file>')
+  .action(file => {
+    parser.parse(file);
+  })
+  .parse(process.argv);
 
-if (!inputFile) {
-  console.log('Please supply a file');
+if (!program.args[0]) {
+  console.error('Error: missing file argument');
+  program.outputHelp();
   process.exit(1);
 }
-
-parser.parse(inputFile);
