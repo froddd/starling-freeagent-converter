@@ -1,16 +1,10 @@
 {
-    "env": {
-        "es6": true,
-        "node": true,
-        "jest": true
-    },
-    "extends": ["plugin:prettier/recommended"],
-    "parserOptions": {
-        "ecmaVersion": 2016,
-        "sourceType": "module"
-    },
-    "rules": {
-        "prettier/prettier": ["error", { "singleQuote": true }]
-    },
-    "plugins": ["prettier"]
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": ["error"]
+  },
+  "env": {
+    "jest": true
+  }
 }

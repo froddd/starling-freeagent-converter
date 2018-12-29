@@ -12,6 +12,11 @@ const starlingHeaders = {
   balance: 'Balance (GBP)'
 };
 
+const generateFilePath = inputFile => {
+  const basename = path.basename(inputFile, '.csv');
+  return inputFile.replace(basename, `FreeAgent-${basename}`);
+};
+
 const parse = inputFile => {
   const outputPath = generateFilePath(inputFile);
   const inputData = fs.readFileSync(inputFile, 'utf8');
@@ -31,12 +36,9 @@ const parse = inputFile => {
   const outputData = csvStringify(newRecords);
 
   fs.writeFileSync(outputPath, outputData);
-  console.log('Generated ' + outputPath);
-};
 
-const generateFilePath = inputFile => {
-  const basename = path.basename(inputFile, '.csv');
-  return inputFile.replace(basename, 'FreeAgent-' + basename);
+  // eslint-disable-next-line no-console
+  console.log(`Generated ${outputPath}`);
 };
 
 module.exports = {

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-const parser = require('./src/parser');
+
 const program = require('commander');
+const parser = require('./src/parser');
 
 program
   .arguments('<file>')
@@ -10,6 +11,7 @@ program
   .parse(process.argv);
 
 if (!program.args[0]) {
+  // eslint-disable-next-line no-console
   console.error('Error: missing file argument');
   program.outputHelp();
   process.exit(1);
