@@ -30,7 +30,7 @@ const parse = inputFile => {
     .map(row => ({
       date: row[starlingHeaders.date],
       amount: row[starlingHeaders.amount],
-      description: row[starlingHeaders.ref]
+      description: `${row[starlingHeaders.party] || 'n/a'} - ${row[starlingHeaders.ref]}`
     }));
 
   const outputData = csvStringify(newRecords);

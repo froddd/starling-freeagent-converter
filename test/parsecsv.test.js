@@ -14,6 +14,8 @@ describe('Starling to FreeAgent CSV parser', () => {
   it('maps starling CSV fields to FreeAgent', () => {
     parser.parse('test/mock/testFile.csv');
     const contents = fs.readFileSync('test/mock/FreeAgent-testFile.csv', 'utf8');
-    expect(contents).toEqual('29/09/2018,-18.90,Lunch\n');
+    expect(contents).toEqual(
+      '29/09/2018,-18.90,North Tea Power - Lunch\n30/09/2018,-30,n/a - Insurance\n'
+    );
   });
 });
