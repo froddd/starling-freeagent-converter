@@ -16,3 +16,6 @@ Download a CSV statement from Starling, then run the index.js node script:
 ```
 node index.js path/to/csv-statement.csv
 ```
+
+This will have created a FreeAgent-csv-statement.csv which you can upload to FreeAgent.
+
